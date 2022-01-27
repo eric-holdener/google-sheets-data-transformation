@@ -620,11 +620,11 @@ class endData {
           tempData.push(this.endDataArray[i][7]);
           tempData.push('');
           tempData.push('Multicultural')
-          tempData.push('Rural - ' + allCounties[i][g]);
-          tempData.push(this.endDataArray[i][10]/(j.length * allCounties[i].length));
-          tempData.push(this.endDataArray[i][1]);
           var county = allCounties[i][g];
           var trimCounty = county.trim();
+          tempData.push('Rural - ' + trimCounty);
+          tempData.push(this.endDataArray[i][10]/(j.length * allCounties[i].length));
+          tempData.push(this.endDataArray[i][1]);
           tempData.push(trimCounty);
           tempData.push(this.endDataArray[i][9]);
           tempData.push(this.getZipCode(j[k]));
