@@ -3,6 +3,7 @@ function myFunction() {
   const data = getData('Booked Media', source);
   console.log('Data =' + data);
   const translationData = getEndData('Master Data', source, data.dataTranslation()[0]);
+  // translationData.dataSegmentation();
   pastingData(translationData.dataSegmentation(), source, 'Master Data',data.dataTranslation()[1], 'Booked Media');
 }
 
@@ -550,55 +551,56 @@ class endData {
   }
 
   getZipCode(county) {
-    if (county = 'Lassen') {
+    var county = county;
+    if (county == 'Lassen') {
       return 96009
     }
-    else if (county = 'Mono') {
+    else if (county == 'Mono') {
       return 93514
     }
-    else if (county = 'Trinity') {
+    else if (county == 'Trinity') {
       return 96048
     }
-    else if (county = 'Tehama') {
+    else if (county == 'Tehama') {
       return 95973
     }
-    else if (county = 'Modoc') {
+    else if (county == 'Modoc') {
       return 96101
     }
-    else if (county = 'El Dorado') {
+    else if (county == 'El Dorado') {
       return 95762
     }
-    else if (county = 'Del Norte') {
+    else if (county == 'Del Norte') {
       return 95531
     }
-    else if (county = 'Madera') {
+    else if (county == 'Madera') {
       return 93720
     }
-    else if (county = 'Yuba') {
+    else if (county == 'Yuba') {
       return 95901
     }
-    else if (county = 'Inyo') {
+    else if (county == 'Inyo') {
       return 93527
     }
-    else if (county = 'Tuolumne') {
+    else if (county == 'Tuolumne') {
       return 95270
     }
-    else if (county = 'Lake') {
+    else if (county == 'Lake') {
       return 95422
     }
-    else if (county = 'Siskiyou') {
+    else if (county == 'Siskiyou') {
       return 96097
     }
-    else if (county = 'Calaveras') {
+    else if (county == 'Calaveras') {
       return 95252
     }
-    else if (county = 'Glenn') {
+    else if (county == 'Glenn') {
       return 95963
     }
-    else if (county = 'Sierra') {
+    else if (county == 'Sierra') {
       return 96118
     }
-    else if (county = 'Plumas') {
+    else if (county == 'Plumas') {
       return 95915
     }
   }
@@ -627,7 +629,7 @@ class endData {
           tempData.push(this.endDataArray[i][1]);
           tempData.push(trimCounty);
           tempData.push(this.endDataArray[i][9]);
-          tempData.push(this.getZipCode(j[k]));
+          tempData.push(this.getZipCode(trimCounty));
           tempData.push(this.endDataArray[i][8]);
 
           finalData.push(tempData);
