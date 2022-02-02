@@ -622,11 +622,13 @@ class endData {
           tempData.push(this.endDataArray[i][7]);
           tempData.push('');
           tempData.push('Multicultural')
+          tempData.push('A18+')
           var county = allCounties[i][g];
           var trimCounty = county.trim();
           tempData.push('Rural - ' + trimCounty);
           tempData.push(this.endDataArray[i][10]/(j.length * allCounties[i].length));
           tempData.push(this.endDataArray[i][1]);
+          tempData.push(this.endDataArray[i][12]);
           tempData.push(trimCounty);
           tempData.push(this.endDataArray[i][9]);
           tempData.push(this.getZipCode(trimCounty));
@@ -657,7 +659,7 @@ function pastingData(finalData, source, sheetName, rawData, rawSheet) {
   var pastingSheet = source.getSheetByName(sheetName);
   var pastingSheetData = pastingSheet.getDataRange();
   var lastRow = pastingSheetData.getLastRow();
-  pastingSheet.getRange(lastRow+1,1, finalData.length, 13).setValues(finalData);
+  pastingSheet.getRange(lastRow+1,1, finalData.length, 15).setValues(finalData);
   
   var changeRawSheet = source.getSheetByName(rawSheet);
   var rawLastRow = changeRawSheet.getLastRow();
